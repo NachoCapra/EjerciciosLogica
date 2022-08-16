@@ -74,22 +74,15 @@ const factorial = function(num){
 console.log(factorial(5))
 
 
-//11 Arrow Function con validaciones
+//Otra opcion
 
-const nfactorial = (numero = undefined) =>{
-if(typeof numero === undefined) return console.warn('No Ingresaste un numero')
-if(typeof numero !== 'number') return console.error(`${numero} no es un numero`)
-if(numero === 0 ) return 1;
-if(Math.sign(numero) === -1) return console.error('El numero no puede ser negativo')
-let factoriall = 1
-for(let i= numero; i>1; i--){
-    factoriall *= i
+
+function esFactorial(numero){
+    let factorial = 1;
+    for(let i=numero;i>1;i--){
+        factorial *= i;
+    }
+    return `el factorial de ${numero} es ${factorial}`
 }
 
-return console.info(`el factorial de ${numero} es ${factoriall}`)
-}
-
-console.log(nfactorial(5))
-
-
-
+console.log(esFactorial(5))

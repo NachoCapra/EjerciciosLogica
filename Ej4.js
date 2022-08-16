@@ -12,7 +12,18 @@
 //12
 
 
-
+function esPrimo (numero){
+    let divisible = false;
+    for(let i=2;i<numero;i++){
+        if((numero % i) === 0){
+            divisible = true;
+            break;
+        }
+    }
+    return (divisible)
+    ?console.log(`el numero ${numero} es primo`)
+    :console.log(`el numero ${numero} no es primo`)
+}
 
 
 
@@ -46,3 +57,18 @@ function par(numero){
 
 
 //14
+
+function celciusAFarenheit(formula){
+    let conversor = (formula*9/5) + 32;
+    return conversor;
+}
+
+function FarenheitACelcius(formula){
+    let conversor = (formula-32)* 5/9
+    return `${conversor.toFixed(1)}C°`
+}
+
+
+
+
+
