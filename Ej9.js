@@ -13,11 +13,11 @@
 //      aceptados*.
 //     Crea un método estático que devuelva los géneros aceptados*.🟢
 //   - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
-//     decimal de una posición.
-//   - Crea un método que devuelva toda la ficha técnica de la película.
+//     decimal de una posición.🟢
+//   - Crea un método que devuelva toda la ficha técnica de la película🟢
 //   - Apartir de un arreglo con la información de 3 películas genera 3 
 //     instancias de la clase de forma automatizada e imprime la ficha técnica 
-//     de cada película.
+//     de cada película.🟢
 
 // * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
 
@@ -138,9 +138,7 @@ validarCalificacion(calificacion){
 }
 
 fichaTecnica(){
-    console.info(`Ficha Tecnica \n Titulo: ${this.titulo}\n Director: ${this.director}\n Año: ${this.estreno}
-                  \n Pais: ${this.pais.join("-")}\n Generos: ${this.generos.join(",")}\n Calificacion: ${this.calificacion}\n Ficha: ${this.ficha}
-                  \n IMBD : ${this.id}`)
+    console.info(`Ficha Tecnica: \n Titulo: ${this.titulo}\n Director: ${this.director}\n Año: ${this.estreno} \n Pais: ${this.pais}\n Generos: ${this.generos}\n Calificacion: ${this.calificacion}\n Ficha: ${this.ficha}\n IMBD : ${this.id}`)
 }
 
 }
@@ -149,15 +147,45 @@ fichaTecnica(){
 
 
 
-const peli = new Pelicula({
-    id: 'tt0019130',
-    titulo: "Titulo de la Peli",
-    director : "Director de la Peli",
-    estreno : 2020,
-    pais: ["Mexico"],
-    generos:["Comedy","Sport"],
-    calificacion : 7.789
-})
+// const peli = new Pelicula({
+//     id: 'tt0019130',
+//     titulo: "Titulo de la Peli",
+//     director : "Director de la Peli",
+//     estreno : 2020,
+//     pais: ["Mexico"],
+//     generos:["Comedy","Sport"],
+//     calificacion : 7.789
+// })
+
+// peli.fichaTecnica();
 
 
+const misPelis = [{
+    id: "tt0758758",
+    titulo : "Into the wild",
+    director: "Sean Penn",
+    estreno : 2007,
+    pais: ['usa'],
+    generos: ["Adventure", "Biography","Drama"],
+    calificacion : 8.1
+},
+{
+    id: 'tt0479143',
+    titulo: 'Rocky Balboa',
+    director : 'Sylvester Stallone',
+    estreno : 2006,
+    pais: ["USA"],
+    generos: ["Action","Drama","Sport"],
+    calificacion: 7.1
+},
+{
+    id: 'tt0468569',
+    titulo: 'The Dark Knight',
+    director : 'Christopher Nolan',
+    estreno : 2008,
+    pais: ["USA","UK"],
+    generos: ["Action","Crime","Drama"],
+    calificacion: 9.0
+}];
 
+misPelis.forEach(el => new Pelicula(el).fichaTecnica())
